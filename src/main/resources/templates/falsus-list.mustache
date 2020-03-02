@@ -1,0 +1,28 @@
+{{>layout/header}}
+
+<h1>그들 본거지 리스트</h1>
+<table class="table table-horizontal table-borderd">
+    <thead class="thead-strong">
+    <tr>
+        <th>번호</th>
+        <th>구분</th>
+        <th>주소</th>
+        <th>방역작업</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    {{#falsuses}}
+        <!--posts라는 리스트를 순회하는 머스태치 문법-->
+        <tr>
+            <td>{{id}}</td>
+            <!--List의 member를 식별하는 문법-->
+            <td>{{div}}</td>
+            <td>{{address}}</td>
+            <td>{{protection}}</td>
+        </tr>
+    {{/falsuses}}
+    </tbody>
+</table>
+
+<a href="/">뒤로 가기</a>
+{{>layout/footer}}
