@@ -14,8 +14,14 @@ public class FalsusApiController {
     private FalsusRepository falsusRepository;
 
     @GetMapping("/list")
-    public String index(Model model){
-        model.addAttribute("falsuses",falsusRepository.findAll());
+    public String List(Model model) {
+        model.addAttribute("falsuses", falsusRepository.findAll());
         return "falsus-list";
+    }
+
+    @GetMapping("/map")
+    public String Map(Model model) {
+        model.addAttribute("falsuses", falsusRepository.findAll());
+        return "falsus-map";
     }
 }

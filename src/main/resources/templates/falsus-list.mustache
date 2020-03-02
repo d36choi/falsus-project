@@ -1,28 +1,55 @@
-{{>layout/header}}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>그들을 찾아라</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<h1>그들 본거지 리스트</h1>
-<table class="table table-horizontal table-borderd">
-    <thead class="thead-strong">
-    <tr>
-        <th>번호</th>
-        <th>구분</th>
-        <th>주소</th>
-        <th>방역작업</th>
-    </tr>
-    </thead>
-    <tbody id="tbody">
-    {{#falsuses}}
-        <!--posts라는 리스트를 순회하는 머스태치 문법-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600|Trade+Winds&display=swap" rel="stylesheet">
+
+
+    <!-- Reset css -->
+    <link rel="stylesheet" href="reset.css" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+    <h1>그들 본거지 리스트</h1>
+    <table class="table table-horizontal table-borderd">
+        <thead class="thead-strong">
         <tr>
-            <td>{{id}}</td>
-            <!--List의 member를 식별하는 문법-->
-            <td>{{div}}</td>
-            <td>{{address}}</td>
-            <td>{{protection}}</td>
+            <th>번호</th>
+            <th>구분</th>
+            <th>주소</th>
+            <th>방역작업</th>
         </tr>
-    {{/falsuses}}
-    </tbody>
-</table>
+        </thead>
+        <tbody id="tbody">
+        {{#falsuses}}
+            <!--posts라는 리스트를 순회하는 머스태치 문법-->
+            <tr>
+                <td>{{id}}</td>
+                <!--List의 member를 식별하는 문법-->
+                <td>{{div}}</td>
+                <td>{{address}}</td>
+                <td>{{protection}}</td>
+            </tr>
+        {{/falsuses}}
+        </tbody>
+    </table>
 
-<a href="/">뒤로 가기</a>
-{{>layout/footer}}
+    <a href="/">뒤로 가기</a>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!--방식은 2가지. 직접 라이브러리를 다운받아서 사용 혹은 외북 CDN 사용. 이 경우 외부 CDN 사용함-->
+    <!-- Javascript -->
+    <script src="/index.js"></script>
+</body>
+</html>
+
+<!--js img css 는 resources/static/ 부터 절대경로가 시작된다.-->
+<!--CSS 는 헤더에. js 는 푸터에 두어야 페이지 로딩 속도가 높아짐. -->
+<!--부트스트랩은 제이쿼리에 의존적이기 때문에 제이쿼리 로딩이 선행되어야함-->

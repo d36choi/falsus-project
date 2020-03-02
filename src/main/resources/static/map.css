@@ -1,0 +1,188 @@
+body {
+  background-color: #015668;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 5px;
+}
+
+/* header */
+
+#header {
+  width: 100%;
+  height: 70px;
+}
+
+#header .header {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #015668;
+}
+
+#header .header p {
+  margin: 0;
+  font-family: "Trade Winds";
+  font-size: 50px;
+  color: #faf5e4;
+  cursor: default;
+}
+
+#header .header span {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #faf5e4;
+  cursor: pointer;
+}
+
+#nav .nav-menu {
+  width: 300px;
+  height: 100%;
+  margin-left: -300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #252a34;
+  transition: all 0.5s ease-in;
+  z-index: 1000;
+}
+
+#nav .nav-layer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: #252a34;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  z-index: 999;
+}
+
+#nav .menu-show {
+  margin-left: 0;
+}
+
+#nav .layer-show {
+  display: flex;
+  opacity: 0.5;
+}
+
+/* naver map */
+
+#naver-map {
+  width: 100%;
+  height: 500px;
+}
+
+/* status */
+#status {
+  width: 100px;
+  height: 250px;
+  position: absolute;
+  top: 150px;
+  left: 10px;
+}
+
+#status .status-bar {
+  width: 100%;
+  height: 100%;
+  margin-left: -150px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.5s ease-in;
+}
+
+#status .status-bar h1 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+#status .status-bar h2 {
+  font-size: 35px;
+  font-weight: 600;
+  color: #ff2e63;
+}
+
+#status .show {
+  margin-left: 0;
+}
+
+/* gps control */
+
+#gps {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  color: #0f4c81;
+  cursor: pointer;
+}
+
+#gps:hover {
+  color: #596157;
+}
+
+/* zoom control */
+
+#zoom {
+  width: 40px;
+  height: 80px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #0f4c81;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#zoom a {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#status-menu {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  color: #0f4c81;
+  cursor: pointer;
+}
