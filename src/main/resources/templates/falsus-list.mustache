@@ -17,6 +17,10 @@
 <body>
 
     <h1>그들 본거지 리스트</h1>
+    <div class="md-form active-cyan active-cyan-2 mb-3">
+        <input onkeydown="onKeyDown()" class="form-control" type="text" placeholder="주소를 입력하세요." aria-label="주소를 입력하세요.">
+        <button type="button" class="btn btn-primary">Search</button>
+    </div>
     <table class="table table-horizontal table-borderd">
         <thead class="thead-strong">
         <tr>
@@ -46,6 +50,7 @@
     <!--방식은 2가지. 직접 라이브러리를 다운받아서 사용 혹은 외북 CDN 사용. 이 경우 외부 CDN 사용함-->
     <!-- Javascript -->
     <script src="/index.js"></script>
+    <script src="/falsus-list.js"></script>
 </body>
 </html>
 
