@@ -15,8 +15,34 @@ function addEvents() {
   goListBtn.addEventListener("click", moveListPage);
 }
 
+function fetchAPI() {
+  $.ajax({
+    url: "http://localhost:8080/list",
+    type: "GET"
+  })
+    .done(data => {
+      console.log("성공");
+      console.log(data);
+    })
+    .fail((jqXHR, textStatus, errorThrown) => {
+      console.log("실패");
+      console.log(jqXHR);
+      console.log(textStatus);
+      console.log(errorThrown);
+    })
+    .then(
+      (data, textStatus, jqXHR) => {
+        console.log("성공 케이스");
+      },
+      (jqXHR, textStatus, errorThrown) => {
+        console.log("실패 케이스");
+      }
+    );
+}
+
 function init() {
   addEvents();
+  fetchAPI();
 }
 
 init();
