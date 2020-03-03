@@ -3,12 +3,14 @@ const statusMenu = document.querySelector(".status-bar");
 const navBtn = document.querySelector(".header span");
 const navMenu = document.querySelector(".nav-menu");
 const navLayer = document.querySelector(".nav-layer");
+const navItem = document.querySelectorAll(".nav-item");
 
 // for gps
 var currentLat = "";
 var currentLon = "";
 
 // const values
+const searchHtml = `<form id="map-search"><input type="text" placeholder="주소를 검색해 주세요" /><a><i class="fas fa-search"></i></a></form>`;
 const gpsHtml = `<a id="gps"><i class="fas fa-map-marker-alt"></i></a>`;
 const zoomHtml = `<div id="zoom"><a id="plus">+</a><a id="minus">-</a></div>`;
 const statusHtml = `<a id="status-menu"><i class="fas fa-bars"></i></a>`;
@@ -56,11 +58,15 @@ naver.maps.onJSContentLoaded = function() {
 /*********************************/
 
 // get html
+var searchForm = searchHtml;
 var gpsBtn = gpsHtml;
 var zoomBtn = zoomHtml;
 var statusBtn = statusHtml;
 
 // create custom control
+var searchControl = new naver.maps.CustomControl(searchForm, {
+  position: naver.maps.Position.TOP_LEFT
+});
 var gpsControl = new naver.maps.CustomControl(gpsBtn, {
   position: naver.maps.Position.LEFT_TOP
 });
@@ -76,9 +82,15 @@ const zoomMinus = zoomControl.getElement().querySelector("#minus");
 
 // add event
 naver.maps.Event.once(map, "init_stylemap", function() {
+  searchControl.setMap(map);
   gpsControl.setMap(map);
   zoomControl.setMap(map);
   statusControl.setMap(map);
+
+  // search function
+  naver.maps.Event.addDOMListener(searchControl.getElement(), "submit", function(event) {
+    event.preventDefault();
+  });
 
   // gps function
   naver.maps.Event.addDOMListener(gpsControl.getElement(), "click", function() {
@@ -120,6 +132,8 @@ function addEvent() {
   window.addEventListener("resize", resizeMap); // reset map size when user resize window
   navBtn.addEventListener("click", showNavMenu);
   navLayer.addEventListener("click", hideNavMenu);
+  navItem[0].addEventListener("click", goBackHome);
+  navItem[1].addEventListener("click", notPrepare);
 }
 
 function showNavMenu() {
@@ -130,6 +144,14 @@ function showNavMenu() {
 function hideNavMenu() {
   navMenu.classList.remove("menu-show");
   navLayer.classList.remove("layer-show");
+}
+
+function goBackHome() {
+  location.href = "../";
+}
+
+function notPrepare() {
+  alert("아직 준비되지 않았습니다.");
 }
 
 function askLocation() {
