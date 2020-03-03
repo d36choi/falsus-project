@@ -17,7 +17,7 @@ function addEvents() {
 
 function fetchAPI() {
   $.ajax({
-    url: "http://localhost:8080/json/data",
+    url: "/json/data",
     type: "GET"
   })
     .done(data => {

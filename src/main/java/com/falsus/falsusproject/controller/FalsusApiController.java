@@ -40,7 +40,7 @@ public class FalsusApiController {
 
     List<Falsus> falsusList= new ArrayList<>();
     falsusRepository.findAll().forEach(falsusList::add);
-    log.info(falsusList.toString());
+//    log.info(falsusList.toString());
     return falsusList;
     }
 
