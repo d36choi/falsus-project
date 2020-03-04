@@ -20,24 +20,16 @@ function fetchAPI() {
     url: "/json/data",
     type: "GET"
   })
-    .done(data => {
-      console.log("성공");
-      console.log(data);
-    })
-    .fail((jqXHR, textStatus, errorThrown) => {
-      console.log("실패");
-      console.log(jqXHR);
-      console.log(textStatus);
-      console.log(errorThrown);
-    })
-    .then(
-      (data, textStatus, jqXHR) => {
-        console.log("성공 케이스");
-      },
-      (jqXHR, textStatus, errorThrown) => {
-        console.log("실패 케이스");
-      }
-    );
+      .done(data => {
+        console.log("성공");
+        console.log(data);
+      })
+      .fail((jqXHR, textStatus, errorThrown) => {
+        console.log("실패");
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown);
+      });
 }
 
 function init() {
