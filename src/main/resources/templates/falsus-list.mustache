@@ -4,47 +4,91 @@
     <title>그들을 찾아라</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600|Trade+Winds&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600|Trade+Winds&display=swap" rel="stylesheet" />
 
     <!-- Reset css -->
     <link rel="stylesheet" href="/reset.css" />
 
     <!-- css -->
-    <link rel="stylesheet" href="/main.css" />
-</head>
-<body>
+    <link rel="stylesheet" href="/list.css" />
+
+    <!-- Font Awesone -->
+    <script src="https://kit.fontawesome.com/9f63cd55b9.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section id="header">
+      <div class="header">
+        <span><i class="fas fa-arrow-right"></i></span>
+        <p>Falsus</p>
+      </div>
+    </section>
 
     <h1>그들 본거지 리스트</h1>
     <div class="md-form active-cyan active-cyan-2 mb-3">
         <input onkeydown="onKeyDown()" class="form-control" type="text" placeholder="주소를 입력하세요." aria-label="주소를 입력하세요.">
         <button type="button" class="btn btn-primary">Search</button>
     </div>
-    <table class="table table-horizontal table-borderd">
-        <thead class="thead-strong">
-        <tr>
-            <th>번호</th>
-            <th>구분</th>
-            <th>주소</th>
-            <th>방역작업</th>
-        </tr>
-        </thead>
-        <tbody id="tbody">
-        {{#falsuses}}
-            <!--posts라는 리스트를 순회하는 머스태치 문법-->
-            <tr>
+    <section id="nav">
+      <div class="nav-menu">
+        <div class="nav-title">
+          <h1>Falsus</h1>
+          <h2>그들을 선별 하여 지도로 알려주는 사이트입니다</h2>
+        </div>
+        <div class="nav-item">
+          <i class="fas fa-home"></i>
+          <a>홈으로</a>
+        </div>
+        <div class="nav-item">
+          <i class="fas fa-thumbs-up"></i>
+          <a>응원하기</a>
+        </div>
+        <div class="nav-footer">
+          <h1>## 개발자 ##</h1>
+          <h2>김재욱</h2>
+          <h2><i class="fas fa-envelope"></i> kjwook7522@gmail.com</h2>
+          <h2>최상현</h2>
+          <h2><i class="fas fa-envelope"></i> yuio1126@gmail.com</h2>
+        </div>
+      </div>
+      <div class="nav-layer"></div>
+    </section>
+
+    <section id="main">
+      <div class="main-table">
+        <div class="table-title">
+          <h1>그들의 지부 찾기</h1>
+        </div>
+        <div class="table-search">
+          <form><input type="text" placeholder="지역을 검색해주세요" /><i class="fas fa-search"></i></form>
+        </div>
+        <div class="table-contents">
+          <table>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>구분</th>
+                <th>주소</th>
+                <th>방역작업</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#falsuses}}
+              <tr>
                 <td>{{id}}</td>
-                <!--List의 member를 식별하는 문법-->
                 <td>{{div}}</td>
                 <td>{{address}}</td>
                 <td>{{protection}}</td>
-            </tr>
-        {{/falsuses}}
-        </tbody>
-    </table>
+              </tr>
+              {{/falsuses}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-    <a href="/">뒤로 가기</a>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!--방식은 2가지. 직접 라이브러리를 다운받아서 사용 혹은 외북 CDN 사용. 이 경우 외부 CDN 사용함-->

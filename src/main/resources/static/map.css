@@ -48,6 +48,8 @@ p {
   cursor: pointer;
 }
 
+/* navigation */
+
 #nav .nav-menu {
   width: 300px;
   height: 100%;
@@ -282,4 +284,62 @@ input {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   color: #0f4c81;
   cursor: pointer;
+}
+
+#cluster {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fa163f;
+  opacity: 0.8;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+#marker-icon {
+  font-size: 1.2em;
+  color: #fa163f;
+}
+
+#marker-info {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-sizing: border-box !important;
+}
+
+#marker-info .title {
+  width: 100%;
+  padding: 15px;
+  background-color: #0f4c81;
+  box-sizing: border-box !important;
+}
+
+#marker-info .title h1 {
+  margin-bottom: 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#marker-info .context {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box !important;
+}
+
+#marker-info .context li {
+  margin-bottom: 5px;
+  font-size: 13px;
 }
