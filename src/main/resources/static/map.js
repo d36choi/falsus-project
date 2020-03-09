@@ -126,6 +126,20 @@ naver.maps.Event.once(map, "init_stylemap", function() {
   // search function
   naver.maps.Event.addDOMListener(searchControl.getElement(), "submit", function(event) {
     event.preventDefault();
+
+    const searchInput = searchControl.getElement().querySelector("input");
+    const address = searchInput.value;
+    searchInput.value = "";
+
+    searchAddress(address);
+  });
+
+  naver.maps.Event.addDOMListener(searchControl.getElement().querySelector("a"), "click", function(event) {
+    const searchInput = searchControl.getElement().querySelector("input");
+    const address = searchInput.value;
+    searchInput.value = "";
+
+    searchAddress(address);
   });
 
   // gps function
@@ -269,6 +283,23 @@ function openInfo(seq) {
       });
     }
   };
+}
+
+function searchAddress(address) {
+  naver.maps.Service.geocode({ query: address }, function(status, response) {
+    if (status !== naver.maps.Service.Status.OK) {
+      return alert("Something wrong!");
+    }
+
+    var result = response.v2, // 검색 결과의 컨테이너
+      items = result.addresses; // 검색 결과의 배열
+
+    if (items.length > 1) {
+      return alert(`검색하신 "${address}"의 결과가 너무 많습니다. 주소를 좀 더 자세히 입력해주세요!`);
+    }
+
+    map.morph(new naver.maps.LatLng(items[0].y, items[0].x), 13);
+  });
 }
 
 function addEvent() {
