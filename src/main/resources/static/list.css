@@ -69,15 +69,17 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 #nav .nav-menu .nav-title h1 {
   margin-bottom: 30px;
-  font-size: 40px;
+  font-size: 32px;
   color: #faf5e4;
 }
 
 #nav .nav-menu .nav-title h2 {
+  padding: 0 40px;
   font-size: 14px;
   opacity: 0.4;
   color: #fff;

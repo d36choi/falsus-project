@@ -9,8 +9,10 @@ const searchIcon = document.querySelector(".table-search i");
 function addEvent() {
   navBtn.addEventListener("click", showNavMenu);
   navLayer.addEventListener("click", hideNavMenu);
-  navItem[0].addEventListener("click", goBackHome);
-  navItem[1].addEventListener("click", notPrepare);
+  navItem[0].addEventListener("click", goBackHome); // go home
+  navItem[1].addEventListener("click", notPrepare); // notice
+  navItem[2].addEventListener("click", goMap); // go map
+  navItem[3].addEventListener("click", notPrepare); // cheer up
   serachForm.addEventListener("submit", serach);
   searchIcon.addEventListener("click", serach);
 }
@@ -37,6 +39,10 @@ function serach(event) {
 
 function goBackHome() {
   location.href = "../";
+}
+
+function goMap() {
+  location.href = "../map/";
 }
 
 function notPrepare() {

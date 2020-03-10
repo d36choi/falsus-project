@@ -70,15 +70,17 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 #nav .nav-menu .nav-title h1 {
   margin-bottom: 30px;
-  font-size: 40px;
+  font-size: 32px;
   color: #faf5e4;
 }
 
 #nav .nav-menu .nav-title h2 {
+  padding: 0 40px;
   font-size: 14px;
   opacity: 0.4;
   color: #fff;
@@ -182,6 +184,9 @@ p {
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.5s ease-in;
+}
+#status .status-bar:hover {
+  color: #596157;
 }
 
 #status .status-bar h1 {

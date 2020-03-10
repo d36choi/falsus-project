@@ -122,6 +122,7 @@ naver.maps.Event.once(map, "init_stylemap", function() {
   // warning : This function must be in "init_stylemap"  //
   /////////////////////////////////////////////////////////
   fetchAPI();
+  beforePageSearch();
 
   // search function
   naver.maps.Event.addDOMListener(searchControl.getElement(), "submit", function(event) {
@@ -305,8 +306,10 @@ function searchAddress(address) {
 function addEvent() {
   navBtn.addEventListener("click", showNavMenu);
   navLayer.addEventListener("click", hideNavMenu);
-  navItem[0].addEventListener("click", goBackHome);
-  navItem[1].addEventListener("click", notPrepare);
+  navItem[0].addEventListener("click", goBackHome); // go home
+  navItem[1].addEventListener("click", notPrepare); // notice
+  navItem[2].addEventListener("click", goList); // go list
+  navItem[3].addEventListener("click", notPrepare); // cheer up
 }
 
 function showNavMenu() {
@@ -321,6 +324,10 @@ function hideNavMenu() {
 
 function goBackHome() {
   location.href = "../";
+}
+
+function goList() {
+  location.href = "../list/";
 }
 
 function notPrepare() {
@@ -341,9 +348,18 @@ function errorLocation() {
   console.log("failed to get location");
 }
 
+function beforePageSearch() {
+  var address = localStorage.getItem("address");
+  if (address) {
+    searchAddress(address);
+    localStorage.removeItem("address");
+  }
+}
+
 function init() {
   addEvent();
   askLocation();
+  beforePageSearch();
 }
 
 init();
