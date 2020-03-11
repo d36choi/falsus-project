@@ -1,6 +1,6 @@
 const naverMap = document.getElementById("naver-map");
 const statusMenu = document.querySelector(".status-bar");
-const navBtn = document.querySelector(".header span");
+// const navBtn = document.querySelector(".header span");
 const navMenu = document.querySelector(".nav-menu");
 const navLayer = document.querySelector(".nav-layer");
 const navItem = document.querySelectorAll(".nav-item");
@@ -16,13 +16,14 @@ var currentLat = "";
 var currentLon = "";
 
 // const variable
-const TITLE_HEIGHT = 70;
+const TITLE_HEIGHT = 0;
 
 // const values
 const searchHtml = `<form id="map-search"><input type="text" placeholder="주소를 검색해 주세요" /><a><i class="fas fa-search"></i></a></form>`;
+const navHtml = `<a id="nav-icon"><i class="fas fa-arrow-right"></i></a>`;
 const gpsHtml = `<a id="gps"><i class="fas fa-map-marker-alt"></i></a>`;
 const zoomHtml = `<div id="zoom"><a id="plus">+</a><a id="minus">-</a></div>`;
-const statusHtml = `<a id="status-menu"><i class="fas fa-bars"></i></a>`;
+const statusHtml = `<a id="status-icon"><i class="fas fa-bars"></i></a>`;
 const htmlMarker1 = {
   content: '<div id="cluster"></div>',
   size: N.Size(50, 50),
@@ -88,6 +89,7 @@ window.addEventListener("resize", () => {
 
 // get html
 var searchForm = searchHtml;
+var navBtn = navHtml;
 var gpsBtn = gpsHtml;
 var zoomBtn = zoomHtml;
 var statusBtn = statusHtml;
@@ -95,6 +97,9 @@ var statusBtn = statusHtml;
 // create custom control
 var searchControl = new naver.maps.CustomControl(searchForm, {
   position: naver.maps.Position.TOP_LEFT
+});
+var navControl = new naver.maps.CustomControl(navBtn, {
+  position: naver.maps.Position.LEFT_TOP
 });
 var gpsControl = new naver.maps.CustomControl(gpsBtn, {
   position: naver.maps.Position.LEFT_TOP
@@ -112,6 +117,7 @@ const zoomMinus = zoomControl.getElement().querySelector("#minus");
 // add event
 naver.maps.Event.once(map, "init_stylemap", function() {
   searchControl.setMap(map);
+  navControl.setMap(map);
   gpsControl.setMap(map);
   zoomControl.setMap(map);
   statusControl.setMap(map);
@@ -141,6 +147,11 @@ naver.maps.Event.once(map, "init_stylemap", function() {
     searchInput.value = "";
 
     searchAddress(address);
+  });
+
+  // nav menu function
+  naver.maps.Event.addDOMListener(navControl.getElement(), "click", function() {
+    showNavMenu();
   });
 
   // gps function
@@ -304,7 +315,7 @@ function searchAddress(address) {
 }
 
 function addEvent() {
-  navBtn.addEventListener("click", showNavMenu);
+  // navBtn.addEventListener("click", showNavMenu);
   navLayer.addEventListener("click", hideNavMenu);
   navItem[0].addEventListener("click", goBackHome); // go home
   navItem[1].addEventListener("click", notPrepare); // notice
