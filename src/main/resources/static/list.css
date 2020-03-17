@@ -1,0 +1,217 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 5px;
+}
+
+/* header */
+
+#header {
+  width: 100%;
+  height: 70px;
+}
+
+#header .header {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #015668;
+}
+
+#header .header p {
+  margin: 0;
+  font-family: "Trade Winds";
+  font-size: 50px;
+  color: #faf5e4;
+  cursor: default;
+}
+
+#header .header span {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #faf5e4;
+  cursor: pointer;
+}
+
+/* navigation */
+
+#nav .nav-menu {
+  width: 300px;
+  height: 100%;
+  margin-left: -300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #252a34;
+  transition: all 0.5s ease-in;
+  z-index: 1000;
+}
+
+#nav .nav-menu .nav-title {
+  width: 100%;
+  height: 100px;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#nav .nav-menu .nav-title h1 {
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #faf5e4;
+}
+
+#nav .nav-menu .nav-title h2 {
+  padding: 0 40px;
+  font-size: 14px;
+  opacity: 0.4;
+  color: #fff;
+}
+
+#nav .nav-menu .nav-item {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+#nav .nav-menu .nav-item:hover {
+  background-color: #30475e;
+}
+
+#nav .nav-menu .nav-item a {
+  font-size: 25px;
+  color: #faf5e4;
+}
+
+#nav .nav-menu .nav-item i {
+  margin: 0 13px;
+  font-size: 1.2em;
+  color: #faf5e4;
+}
+
+#nav .nav-menu .nav-footer {
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#nav .nav-menu .nav-footer h1 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #faf5e4;
+}
+
+#nav .nav-menu .nav-footer h2 {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #fff;
+  opacity: 0.4;
+}
+
+#nav .nav-layer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: #252a34;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  z-index: 999;
+}
+
+#nav .menu-show {
+  margin-left: 0;
+}
+
+#nav .layer-show {
+  display: flex;
+  opacity: 0.5;
+}
+
+#main {
+  margin: 0 80px;
+}
+
+#main .main-table .table-title {
+  height: 60px;
+  margin: 40px 0;
+  border-bottom: 2px solid #000;
+}
+
+#main .main-table .table-title h1 {
+  font-size: 40px;
+}
+
+#main .main-table .table-search {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+#main .main-table .table-search input {
+  width: 500px;
+  padding: 10px;
+  padding-right: 32px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  outline: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-size: 16px;
+}
+
+#main .main-table .table-search i {
+  position: absolute;
+  top: 10px;
+  left: 513px;
+  opacity: 0.6;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+#main .main-table .table-contents table {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+#main .main-table .table-contents thead {
+  background-color: #ccc;
+}
+
+#main .main-table .table-contents th {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+#main .main-table .table-contents td {
+  height: 40px;
+  padding: 10px;
+}

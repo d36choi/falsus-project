@@ -17,5 +17,8 @@ public class Falsus {
     private String div;
     private String address;
     private String protection;
+    private double geoX;
+    private double geoY;
+
 
 }

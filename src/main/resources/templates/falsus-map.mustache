@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>우리동네 신천지</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600|Trade+Winds&display=swap" rel="stylesheet">
+
+
+    <!-- Reset css -->
+    <link rel="stylesheet" href="/reset.css" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="/map.css" />
+
+    <!-- Font Awesone -->
+    <script src="https://kit.fontawesome.com/9f63cd55b9.js" crossorigin="anonymous"></script>
+  </head>
+
+<body>
+
+  <section id="header">
+    <div class="header">
+      {{! <span><i class="fas fa-arrow-right"></i></span> }}
+      <img src="/logo.png" alt="logo" />
+      {{! <p>Falsus</p> }}
+    </div>
+  </section>
+
+  <section id="nav">
+    <div class="nav-menu">
+      <div class="nav-title">
+        <h1>우리동네 신천지</h1>
+        <h2>신천지 지부를 선별 하여 지도로 알려주는 사이트입니다</h2>
+      </div>
+      <div class="nav-item">
+        <i class="fas fa-home"></i>
+        <a>홈으로</a>
+      </div>
+      <div class="nav-item">
+        <i class="fas fa-bell"></i>
+        <a>공지사항</a>
+      </div>
+      <div class="nav-item">
+        <i class="fas fa-stream"></i>
+        <a>리스트 보기</a>
+      </div>
+      <div class="nav-item">
+        <i class="fas fa-thumbs-up"></i>
+        <a>응원하기</a>
+      </div>
+      <div class="nav-footer">
+        <h1>## 개발자 ##</h1>
+        <h2>김재욱</h2>
+        <h2><i class="fas fa-envelope"></i> kjwook7522@gmail.com</h2>
+        <h2>최상현</h2>
+        <h2><i class="fas fa-envelope"></i> yuio1126@gmail.com</h2>
+      </div>
+    </div>
+    <div class="nav-layer"></div>
+  </section>
+
+  <!-- Map -->
+  <div id="naver-map"></div>
+
+  <div id="status">
+    <div class="status-bar">
+      <h1>총 지부</h1>
+      <h2>110</h2>
+      <h3>서울 <span>230</span>지부</h3>
+      <h3>대구 <span>20</span>지부</h3>
+      <h3>부산 <span>90</span>지부</h3>
+      <h3>대전 <span>50</span>지부</h3>
+      <h3>전주 <span>18</span>지부</h3>
+    </div>
+  </div>
+
+  <!-- Naver maps -->
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=jstl2x0y45&submodules=geocoder"></script>
+
+  <!-- Javascript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="/MarkerClustering.js"></script>
+  <script src="/map.js"></script>
+  <!--방식은 2가지. 직접 라이브러리를 다운받아서 사용 혹은 외북 CDN 사용. 이 경우 외부 CDN 사용함-->
+</body>
+</html>
+
+<!--js img css 는 resources/static/ 부터 절대경로가 시작된다.-->
+<!--CSS 는 헤더에. js 는 푸터에 두어야 페이지 로딩 속도가 높아짐. -->
+<!--부트스트랩은 제이쿼리에 의존적이기 때문에 제이쿼리 로딩이 선행되어야함-->

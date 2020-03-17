@@ -1,13 +1,65 @@
-{{>layout/header}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>우리동네 신천지</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600|Trade+Winds&display=swap" rel="stylesheet" />
 
-<div class="col md-12">
-    <div class="justify-content-center">
-        <h1> 그들은 어디있을까요</h1>
-        <a class="btn btn-primary" href="/list">리스트 보기</a>
-        <a class="btn btn-danger" href="/map">지도로 보기</a>
+    <!-- Reset css -->
+    <link rel="stylesheet" href="reset.css" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- Font Awesone -->
+    <script src="https://kit.fontawesome.com/9f63cd55b9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<section id="main">
+    <div class="main-page">
+        <div class="notice-icon">
+            <i class="fas fa-bell"></i>
+        </div>
+        <div class="notice">
+            <div class="title">
+                <h1>공지사항</h1>
+            </div>
+            <div class="contents">
+                <h2>첫 번째 공지사항입니다. 서비스 오픈을 앞두고 있습니다.</h2>
+                <p>03.10</p>
+            </div>
+            <div class="contents">
+                <h2>두 번째 공지사항입니다. 서비스 오픈을 앞두고 있습니다.</h2>
+                <p>03.10</p>
+            </div>
+            <div class="contents">
+                <h2>세 번째 공지사항입니다. 서비스 오픈을 앞두고 있습니다.</h2>
+                <p>03.10</p>
+            </div>
+        </div>
+        <div class="notice-layer"></div>
+        <div class="main-box">
+            <img src="logo.png" alt="main-logo" />
+            <form><input type="text" placeholder="우리 동네를 검색해보세요" /><i class="fas fa-search"></i></form>
+            <div class="main-button">
+                <button><a>지도로 보기</a></button>
+                <button><a>목록으로 보기</a></button>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 
+<!-- Javascript -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="/index.js"></script>
+<!--방식은 2가지. 직접 라이브러리를 다운받아서 사용 혹은 외북 CDN 사용. 이 경우 외부 CDN 사용함-->
+</body>
+</html>
 
-{{>layout/footer}}
+<!--js img css 는 resources/static/ 부터 절대경로가 시작된다.-->
+<!--CSS 는 헤더에. js 는 푸터에 두어야 페이지 로딩 속도가 높아짐. -->
+<!--부트스트랩은 제이쿼리에 의존적이기 때문에 제이쿼리 로딩이 선행되어야함-->
